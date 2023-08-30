@@ -1,2 +1,9 @@
 #!/bin/bash
-file /tmp/iamfile
+file_path="/tmp/iamafile"
+
+if [ -e "$file_path" ]; then
+    file_info=$(file "$file_path")
+    echo "$file_info"
+else
+    echo "File '$file_path' does not exist."
+fi
